@@ -53,7 +53,7 @@ fn main() {
     // run the app
     app.run(|_, e| match e {
         // prevent app exit when the last window is closed
-        tauri::Event::ExitRequested { api, .. } => {
+        tauri::RunEvent::ExitRequested { api, .. } => {
             api.prevent_exit();
         }
         _ => {}
